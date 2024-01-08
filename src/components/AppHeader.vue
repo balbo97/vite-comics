@@ -92,8 +92,6 @@ export default {
 header {
   height: 75px;
 
-
-
   li a {
     margin-left: 15px;
     text-transform: uppercase;
