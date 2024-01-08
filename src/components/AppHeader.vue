@@ -13,7 +13,7 @@ export default {
         {
           label: 'Comics',
           url: '#',
-          current: false
+          current: true
         },
         {
           label: 'Movies',
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <template lang="">
-  <header>
+  <header class="pt-3">
     <div class="container-sm">
       <div class="row">
         <div class="col">
@@ -93,9 +93,16 @@ header {
   height: 75px;
 
 
-  li {
+
+  li a {
     margin-left: 15px;
     text-transform: uppercase;
+    padding: 30px 0;
+
+    &.active {
+      color: rgb(1, 110, 219);
+      border-bottom: 3px solid rgb(1, 110, 219);
+    }
   }
 
 }
