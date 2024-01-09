@@ -26,17 +26,17 @@ export default {
 
 </template>
 
-<style lang="sccs" scoped>
-   .buy_comics {
-        background-color: rgb(1, 110, 219);
+<style lang="scss" scoped>
+.buy_comics {
+    background-color: rgb(1, 110, 219);
 
 
-        .images {
-            height: 150px;
-            padding: 30px;
+    .images {
+        height: 150px;
+        padding: 30px;
 
-
-        }
 
     }
+
+}
 </style>

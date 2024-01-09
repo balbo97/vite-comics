@@ -1,8 +1,16 @@
 <script>
 
-
+import AppBluBar from './AppBluBar.vue'
+import AppComics from './AppComics.vue'
 export default {
+
+    components: {
+        AppBluBar,
+        AppComics
+    },
+
     name: 'AppMain',
+
     data() {
         return {
 
@@ -88,83 +96,58 @@ export default {
 
 <template lang="">
     <main>
+        <div class="jumbotrone"></div>
         <div class="bg-dark">
-
+            
             <div class="container-sm py-5 text-light">
                 <div class="row">
                     <div class="col">
                         <div class="comics d-flex flex-wrap">
                             
-                            <div class="regular-card" v-for="comic, index in comics" :key="index">
-
-                                <img :src="comic.thumb">
-                                <h6 class="card-text">{{comic.series}}</h6>
-                              
-                            </div>
+                            <div class="current-series p-2 bg-primary">Current Series</div>
+                            <AppComics  v-for="comic, index in comics" :key="index" :comic="comic" />
                         
                         </div>
-                        <a class="btn btn-primary" href="#" role="button">LOAD MORE</a>
+                        <div class="d-flex justify-content-center mt-5">
+
+                            <a class="btn btn-primary" href="#" role="button">LOAD MORE</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="buy_comics">
-            <div class="container-sm">
-                <div class="row">
-                    <div class="col">
-                        <div class="images d-flex justify-content-around">
-
-                            <img src="../assets/img/buy-comics-digital-comics.png" alt="">
-                            <img src="../assets/img/buy-comics-merchandise.png" alt="">
-                            <img src="../assets/img/buy-comics-shop-locator.png" alt="">
-                            <img src="../assets/img/buy-comics-subscriptions.png" alt="">
-                            <img src="../assets/img/buy-dc-power-visa.svg" alt="">
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        <AppBluBar />
     </main>
 </template>
 
 <style lang="scss">
 main {
 
-    margin-top: 3px;
-
-    .regular-card {
-        margin: 10px;
-        width: calc(100% / 6 - 20px);
 
 
+    .jumbotrone {
+        height: 400px;
+        background-image: url(../assets/img/jumbotron.jpg);
+        background-position: top;
+        background-size: cover;
 
-        img {
-            aspect-ratio: 1 / 1;
-            max-width: 100%;
+    }
 
+    .comics {
+
+        position: relative;
+
+        .current-series {
+            position: absolute;
+            top: -13%;
+            left: 0;
         }
 
-        h6 {
-            text-transform: uppercase;
-            margin-top: 5px;
-        }
+
+
     }
 
 
-
-    .buy_comics {
-        background-color: rgb(1, 110, 219);
-
-
-        .images {
-            height: 150px;
-            padding: 30px;
-
-
-        }
-
-    }
 }
 </style>
