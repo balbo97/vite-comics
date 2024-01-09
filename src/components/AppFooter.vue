@@ -17,6 +17,7 @@ export default {
                     <div class="col">
                         
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -46,10 +47,17 @@ export default {
     </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .top-footer {
     background-image: url('../assets/img/footer-bg.jpg');
     height: 400px;
+
+    .col {
+        background-image: url('../assets/img/dc-logo-bg.png');
+        background-position: right;
+        background-repeat: no-repeat;
+        height: 400px;
+    }
 }
 
 .bottom-footer {
